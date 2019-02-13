@@ -17,9 +17,9 @@ handlers = []
 def openFile():
     try:
         os.startfile('C:\\WINDOWS\\system32\\notepad.exe')
-        print "Starting program..."
-    except Exception, e:
-        print str(e)
+        print("Starting program...")
+    except Exception as e:
+        print(str(e))
 
 def selectingActiveWindow(activewindowhandler):           
     win32gui.SetForegroundWindow(activewindowhandler)
@@ -29,16 +29,16 @@ def typing(role):
         selectingActiveWindow(handlers[0])
         keyboard.press('A')
         keyboard.release('A')
-        print 'Main act'
+        print('Main act')
         
     elif role == 'sup':
         selectingActiveWindow(handlers[1])
         keyboard.press('W')
         keyboard.release('W')
-        print 'Sup act'
+        print('Sup act')
 
     else:
-        print 'Role not slected!'
+        print ('Role not slected!')
 
 def window_setup():
     time.sleep(3)
@@ -83,13 +83,13 @@ def supportThread():
         time.sleep(random.uniform(1080.0,1100.0))
 
 def threader(threadNumber, name):
-    print threadNumber
+    print(threadNumber)
     if threadNumber == 1:
         mainThread()
     elif threadNumber == 2:
         supportThread()
     else:
-        print 'threadNumber oolist?'
+        print('threadNumber oolist?')
 
 
 t1 = threading.Thread(target = threader, name = 'Mainthread', args = (1, 'Mainthread'))
